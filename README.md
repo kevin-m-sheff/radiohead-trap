@@ -34,6 +34,7 @@ B: Go through the getting started instructions here (takes 3 minutes): https://d
 C: Go to Dashboard -> your app name -> Settings -> Basic Information | Record the Client ID and Client secret.
   
 D: Create a .env file in the root of the project directory with the contents:
+
 SPOTIPY_CLIENT_ID=your_client_id
   
 SPOTIPY_CLIENT_SECRET=your_client_secret
