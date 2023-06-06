@@ -44,7 +44,7 @@ SPOTIPY_REDIRECT_URI=http://localhost:3000
 ## Usage
 Before running the program, make sure you have a working microphone device connected to the computer you're using and that you are logged in to an open spotify client on the device you want the song audio to come from.
 
-In a terminal of some type, enter the root of the directory where you cloned the project and type "python3 main.py" and hit enter.
+In a terminal of some type, enter the root of the directory where you cloned the project and type "python3 main.py" and hit enter. (Don't forget to run this command from within the virtual environment you created if you used one.)
 
 You will be prompted to select a microphone device and spotify client.  After waiting for vosk to initialize, you'll be informed that the program is listening and you should see the things you say printed out in the terminal stdout.
 
