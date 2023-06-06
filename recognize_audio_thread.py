@@ -64,8 +64,15 @@ def recognize_audio_thread(
         try:
             recognized_words_json = json.loads(recognized_audio)
         except json.JSONDecodeError:
-            print("JSONDecodeError: Vosk returned malformed JSON.")
-            continue
+            print("JSONDecodeError: Vosk returned malformed JSON. Please check readme "
+                  "for vosk model installation instructions.")
+            with rec_words_deque_thread_cond:
+                stop_thread_event.set()
+                audio_joinable_queue.task_done()
+                # Notify the waiting database search thread so it can shut down too.
+                recognized_words_deque.appendleft(None)
+                rec_words_deque_thread_cond.notify()
+            break
 
         if recognized_words_json.get("text"):
             recognized_words = recognized_words_json.get("text")
