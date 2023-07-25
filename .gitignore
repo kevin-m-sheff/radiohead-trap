@@ -1,3 +1,10 @@
+model/README
+model/am/
+model/conf/
+model/graph/
+model/ivector/
+model/rescore/
+model/rnnlm/
 .DS_Store
 # Byte-compiled / optimized / DLL files
 __pycache__/
